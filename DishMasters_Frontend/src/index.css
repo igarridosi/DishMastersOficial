@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('/fonts/Varela_Round/VarelaRound-Regular.ttf');
+    font-weight: normal;
+}
+
+*{
+    font-family: 'MyCustomFont';
+}
+
+
