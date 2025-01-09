@@ -4,53 +4,77 @@ import axiosClient from "../axiosClient";
 import { useStateContext } from "../contexts/contextProvider";
 
 export default function Login() {
-  const emailRef = useRef();
-  const passwordRef = useRef();
+    const emailRef = useRef();
+    const passwordRef = useRef();
 
-  const { setUser, setToken } = useStateContext();
-  const [error, setError] = useState("");
+    const { setUser, setToken } = useStateContext();
+    const [error, setError] = useState("");
 
-
-  const Submit = async (ev) => {
-    ev.preventDefault();
-    setError(""); // Clear any previous errors
-    const payload = {
-        email: emailRef.current.value,
-        password: passwordRef.current.value,
-    };
-
-    if (!payload.email || !payload.password) {
-      setError("Please fill in all required fields.");
-      return;
+    const Submit = (ev) => {
+        ev.preventDefault();
+        const payload = {
+            email: emailRef.current.value,
+            password: passwordRef.current.value,
+        }
+        axiosClient.post("/login", payload).then(({ data }) => {
+            setUser(data.user);
+            setToken(data.token);
+        }).catch(err => {
+            const response = err.response;
+            if (response && response.status === 422) {
+                console.log(response.data.errors);
+            }
+        });
     }
+    /*
+    const emailRef = useRef();
+    const passwordRef = useRef();
 
-    // Client-side validation
-    if (payload.password.length < 8) {
-        setError("Password must be at least 8 characters long.");
-        return;
-    }
+    const { setUser, setToken } = useStateContext();
+    const [error, setError] = useState("");
 
-    try {
-      const { data } = await axiosClient.post("/login", payload);
-      setUser(data.user);
-      setToken(data.token);
 
-    } catch (err) {
-        if (!err.response) {
-            setError("Unable to connect to the server. Please check your internet connection and try again.");
-        } else {
-            const { status, data } = err.response;
-            console.log(status)
-            switch (status) {
-                case 400:
-                  setError("Invalid email or password. Please try again.");
-                  break;
-                default:
-                  setError("An error occurred. Please try again.");
+    const Submit = async (ev) => {
+        ev.preventDefault();
+        setError(""); // Clear any previous errors
+        const payload = {
+            email: emailRef.current.value,
+            password: passwordRef.current.value,
+        };
+
+        try {
+            const { data } = await axiosClient.post("/login", payload);
+            setUser(data.user);
+            setToken(data.token);
+
+        } catch (err) {
+            if (!err.response) {
+                setError("Unable to connect to the server. Please check your internet connection and try again.");
+            } else {
+                const { status, data } = err.response;
+                console.log(status)
+                switch (status) {
+                    case 400:
+                        setError("Invalid email or password. Please try again.");
+                        break;
+                    default:
+                        setError("An error occurred. Please try again.");
+                }
             }
         }
-      }
+
+        if (!payload.email || !payload.password) {
+            setError("Please fill in all required fields.");
+            return;
+        }
+
+        // Client-side validation
+        if (payload.password.length < 8) {
+            setError("Password must be at least 8 characters long.");
+            return;
+        }
     };
+    */
 
     return (
         <div className="min-h-screen bg-[#FAFBFE] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -65,11 +89,11 @@ export default function Login() {
 
             <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-3">
                 <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-                    <form className="space-y-6" onSubmit={Submit}>
+                    <form method="POST" className="space-y-6" onSubmit={Submit}>
                         {error && (
                             <div className="alert alert-danger alert-warning flex items-center gap-3" role="alert">
                                 <svg className="w-[30px] h-[30px] fill-red-900" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M459.1 52.4L442.6 6.5C440.7 2.6 436.5 0 432.1 0s-8.5 2.6-10.4 6.5L405.2 52.4l-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4c0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2c0-4.6-3-8.9-7.2-10.4L459.1 52.4zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9C256.5 100.3 232.7 96 208 96C93.1 96 0 189.1 0 304S93.1 512 208 512s208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"></path>
+                                    <path d="M459.1 52.4L442.6 6.5C440.7 2.6 436.5 0 432.1 0s-8.5 2.6-10.4 6.5L405.2 52.4l-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4c0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2c0-4.6-3-8.9-7.2-10.4L459.1 52.4zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9C256.5 100.3 232.7 96 208 96C93.1 96 0 189.1 0 304S93.1 512 208 512s208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"></path>
                                 </svg>
                                 <p className="mt-3">
                                     <span className="text-lg font-semibold">Warning alert:</span> {error}
@@ -86,7 +110,7 @@ export default function Login() {
                                     ref={emailRef}
                                     type="email"
                                     autoComplete="email"
-                                    
+
                                     className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                                     placeholder="Enter your email address"
                                 />
@@ -104,7 +128,7 @@ export default function Login() {
                                     name="password"
                                     type="password"
                                     autoComplete="current-password"
-                                    
+
                                     className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                                     placeholder="Enter your password"
                                 />

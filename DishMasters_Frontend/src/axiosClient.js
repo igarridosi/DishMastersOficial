@@ -5,6 +5,47 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 const axiosClient = axios.create({
     baseURL: "http://localhost:8000/api",
+});
+
+axiosClient.interceptors.request.use((config) => {
+    const token = localStorage.getItem("ACCESS_TOKEN");
+    config.headers.Authorization = `Bearer ${token}`;
+    return config;
+});
+
+axiosClient.interceptors.request.use(
+    (response) => {
+        return response;
+    },
+    (error) => {
+        try {
+            const { response } = error;
+            if (response.status === 401) {
+                localStorage.removeItem("ACCESS_TOKEN");
+            }
+        } catch (err) {
+            console.error(err);
+        }
+        throw error;
+    }
+);
+
+/*
+// Asegúrate de incluir el token en cada solicitud
+axiosClient.interceptors.request.use((config) => {
+    const token = localStorage.getItem('authToken'); // O el lugar donde guardas el token
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+});
+/*
+
+axios.defaults.withCredentials = true;
+axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+const axiosClient = axios.create({
+    baseURL: import.meta.env.VITE_API_BASE_URL + '/api',
     withCredentials: true,
 });
 
@@ -12,7 +53,7 @@ const axiosClient = axios.create({
 axiosClient.interceptors.request.use(async (config) => {
     if (!document.cookie.includes("XSRF-TOKEN")) {
         try {
-            await axios.get("http://localhost:8000/sanctum/csrf-cookie", {
+            await axios.get(import.meta.env.VITE_API_BASE_URL + '/sanctum/csrf-cookie', {
                 withCredentials: true,
             });
             console.log("CSRF cookie fetched");
@@ -22,6 +63,10 @@ axiosClient.interceptors.request.use(async (config) => {
     }
     return config;
 });
+
+axiosClient.get('/test')
+    .then(response => console.log(response.data))
+    .catch(error => console.error('Error:', error));
 
 // Response Interceptor to handle errors globally
 axiosClient.interceptors.response.use(
@@ -37,5 +82,6 @@ axiosClient.interceptors.response.use(
         return Promise.reject(error);
     }
 );
+*/
 
 export default axiosClient;
