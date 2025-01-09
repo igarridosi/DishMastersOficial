@@ -18,23 +18,18 @@ export default function DefaultLayout() {
     const onLogout = async (ev) => {
         ev.preventDefault();
         try {
-            // Call the logout endpoint
-            const response = await axios.post('/logout', { token });
-
-            // Clear user and token state
+          const response = await axiosClient.post('/logout');
+          if (response.status === 200) {
+            console.log("enter")
             setUser(null);
             setToken(null);
-
-            // Optionally clear localStorage/sessionStorage if used
-            localStorage.removeItem('authToken'); // If using localStorage
-            sessionStorage.removeItem('authToken'); // If using sessionStorage
-
-            // Redirect to home
+            localStorage.removeItem('authToken');
             navigate('/');
+          }
         } catch (error) {
-            console.error("Error during logout:", error);
+          console.error("Error during logout:", error.response || error.message);
         }
-    };
+      };
 
 
 
