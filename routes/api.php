@@ -23,3 +23,6 @@ Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logo
 
 Route::post('/register',[AuthController::class,'register']);
 Route::put('/users/{id}/status', [UserController::class, 'updateStatus']);
+
+Route::get('/profile', [UserController::class, 'profile'])->middleware('auth');
+Route::put('/profile', [UserController::class, 'updateProfile'])->middleware('auth');

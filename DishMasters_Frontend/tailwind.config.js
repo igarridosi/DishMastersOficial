@@ -3,7 +3,11 @@
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'DishColor': 'hsl(36, 100%, 67%)'
+      }
+    },
   },
   plugins: [
     require('tailwindcss-motion', '@iconify/tailwind')

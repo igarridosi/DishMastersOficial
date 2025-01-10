@@ -18,18 +18,18 @@ export default function DefaultLayout() {
     const onLogout = async (ev) => {
         ev.preventDefault();
         try {
-          const response = await axiosClient.post('/logout');
-          if (response.status === 200) {
-            console.log("enter")
-            setUser(null);
-            setToken(null);
-            localStorage.removeItem('authToken');
-            navigate('/');
-          }
+            const response = await axiosClient.post('/logout');
+            if (response.status === 200) {
+                console.log("enter")
+                setUser(null);
+                setToken(null);
+                localStorage.removeItem('authToken');
+                navigate('/');
+            }
         } catch (error) {
-          console.error("Error during logout:", error.response || error.message);
+            console.error("Error during logout:", error.response || error.message);
         }
-      };
+    };
 
 
 
@@ -45,10 +45,18 @@ export default function DefaultLayout() {
         <div id="defaultLayout" className="bg-gray-50 text-gray-900">
             <div className="content">
                 {location.pathname === '/' ? <div /> :
-                    <header className="flex justify-between items-center p-4 bg-[#222222] text-white">
-                        <div>Header</div>
+                    <header className="flex justify-between items-center p-4 bg-[#ffffff] text-white">
+                        <div>
+                            <a href="/">
+                                <img
+                                    src="/img/DishMasterLogo_2_-removebg-preview.png"
+                                    alt="DishMaster Logo"
+                                    className="w-36"
+                                />
+                            </a>
+                        </div>
                         <div className="flex items-center">
-                            <span className="mr-4">{user.name}</span>
+                            <span className="mr-4 text-[#222222]">{user.name}</span>
                             <div className="avatar">
                                 <div className="size-10 mr-5">
                                     <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-1.png" alt="avatar" className="rounded-full" />

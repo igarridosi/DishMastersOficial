@@ -69,6 +69,33 @@ class UserController extends Controller
         return response()->json(['message' => 'Status updated successfully']);
     }    
 
+    // Fetch profile
+    public function profile(Request $request)
+    {
+        return response()->json([
+            'user' => $request->user(), // Returns the authenticated user
+        ]);
+    }
+
+    // Update profile
+    public function updateProfile(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $request->user()->id,
+            'password' => 'nullable|min:8|confirmed',
+        ]);
+
+        $user = $request->user();
+        $user->update([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => $validated['password'] ? bcrypt($validated['password']) : $user->password,
+        ]);
+
+        return response()->json(['message' => 'Profile updated successfully']);
+    }
+
 
     /**
      * Remove the specified resource from storage.

@@ -7,6 +7,7 @@ import Users from './views/users';
 //import Users from './components/users.jsx';
 import UserForm from './views/UserForm';
 import HomeComponent from "./views/index";
+import UserProfile from "./views/profile"
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: '/users/:id',
                 element: <UserForm key="UserUpdate" />,
+            },
+            {
+                path: '/profile/:id',  // New route for the user profile page
+                element: <UserProfile />, // Render the UserProfile component
             },
 
         ]

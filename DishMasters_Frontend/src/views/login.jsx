@@ -26,55 +26,6 @@ export default function Login() {
             }
         });
     }
-    /*
-    const emailRef = useRef();
-    const passwordRef = useRef();
-
-    const { setUser, setToken } = useStateContext();
-    const [error, setError] = useState("");
-
-
-    const Submit = async (ev) => {
-        ev.preventDefault();
-        setError(""); // Clear any previous errors
-        const payload = {
-            email: emailRef.current.value,
-            password: passwordRef.current.value,
-        };
-
-        try {
-            const { data } = await axiosClient.post("/login", payload);
-            setUser(data.user);
-            setToken(data.token);
-
-        } catch (err) {
-            if (!err.response) {
-                setError("Unable to connect to the server. Please check your internet connection and try again.");
-            } else {
-                const { status, data } = err.response;
-                console.log(status)
-                switch (status) {
-                    case 400:
-                        setError("Invalid email or password. Please try again.");
-                        break;
-                    default:
-                        setError("An error occurred. Please try again.");
-                }
-            }
-        }
-
-        if (!payload.email || !payload.password) {
-            setError("Please fill in all required fields.");
-            return;
-        }
-
-        // Client-side validation
-        if (payload.password.length < 8) {
-            setError("Password must be at least 8 characters long.");
-            return;
-        }
-    };
-    */
 
     return (
         <div className="min-h-screen bg-[#FAFBFE] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
