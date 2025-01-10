@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         if (auth()->check() && auth()->user()->status === 'dishAdmin') {
             return UserResource::collection(
-                User::query()->orderBy('id', 'desc')->get()
+                User::query()->orderBy('id', 'desc')->get(['id', 'name', 'email', 'status'])
             );
         }
     }
@@ -59,14 +59,15 @@ class UserController extends Controller
     public function updateStatus(Request $request, $id)
     {
         $request->validate([
-            'status' => 'required|in:dishUser,dishAdmin',
+            'status' => 'required|string|in:dishUser,dishAdmin',
         ]);
-
+    
         $user = User::findOrFail($id);
-        $user->update(['status' => $request->status]);
-
+        $user->status = $request->status;
+        $user->save();
+    
         return response()->json(['message' => 'Status updated successfully']);
-    }
+    }    
 
 
     /**

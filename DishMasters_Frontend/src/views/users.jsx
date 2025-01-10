@@ -16,6 +16,7 @@ export default function Users() {
         axiosClient.get('/users')
             .then(({ data }) => {
                 setLoading(false);
+                console.log(data.data); // Log to verify status
                 setUsers(data.data);
             })
             .catch(() => {
@@ -93,7 +94,7 @@ export default function Users() {
                                     <td className="py-2 px-4">{u.email}</td>
                                     <td className="py-2 px-4">
                                         <select
-                                            value={editedStatuses[u.id] || u.status}
+                                            value={editedStatuses[u.id] ?? u.status} // Use nullish coalescing to handle undefined values
                                             onChange={(e) => updateStatus(u.id, e.target.value)}
                                             className="bg-white border border-gray-300 rounded-md px-2 py-1"
                                         >
