@@ -17,9 +17,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        return UserResource::collection(
-            User::query()->orderBy('id','desc')->get()
-        );
+        if (auth()->check() && auth()->user()->status === 'dishAdmin') {
+            return UserResource::collection(
+                User::query()->orderBy('id', 'desc')->get()
+            );
+        }
     }
 
     /**
