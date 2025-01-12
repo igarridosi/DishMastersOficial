@@ -51,7 +51,7 @@ export default function Users() {
             <div className="flex justify-between items-center p-4">
                 <h1 className="text-2xl font-semibold">Users</h1>
                 <Link
-                    className="bg-[#FFBD59] text-black py-2 px-4 rounded-md hover:bg-[#ff9f3d] text-decoration-line: none"
+                    className="bg-[#FFBD59] text-black py-2 px-4 rounded-md hover:bg-[#ff9f3d] no-underline"
                     to="/users/new"
                 >
                     Add new

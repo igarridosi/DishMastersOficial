@@ -1,7 +1,6 @@
 // resources/js/views/ProfileSettings.jsx
 import { useEffect, useState } from 'react';
 import axiosClient from '../../axiosClient';
-import ProfileSidebar from './profileSidebar';
 import ProfileImageUpload from './profileImage';
 import { useNavigate } from 'react-router-dom';
 

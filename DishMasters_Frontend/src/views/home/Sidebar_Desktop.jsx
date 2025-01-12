@@ -159,7 +159,7 @@ const SidebarDesktop = ({ setShowForm }) => {
           {token && (
             <header className="flex justify-between items-center p-4 text-white origin-to motion-delay-[2000ms] motion-scale-in-0 motion-opacity-in-0">
               <div className="flex items-center">
-                <Link to={`/profile/${user?.id}`} className="mr-4 text-black">
+                <Link to={`/profile/${user?.id}`} className="mr-4 no-underline text-[#222222] font-sans bg-[#ffbd59] text-2xl text-center rotate-[-2deg] inline-block font-bold">
                   {user?.name}
                 </Link>
                 <div className="avatar">

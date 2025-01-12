@@ -82,7 +82,7 @@ export default function ProfileImageUpload({ userId }) {
                     <button
                         type="button" // Make sure the button type is 'button'
                         onClick={handleImageUpload} // Manually handle image upload
-                        className="bg-blue-500 text-white px-4 py-2 rounded"
+                        className="bg-[#222222] hover:bg-DishColor shadow-xs transition-all text-white px-4 py-2 rounded"
                     >
                         Upload New Image
                     </button>
