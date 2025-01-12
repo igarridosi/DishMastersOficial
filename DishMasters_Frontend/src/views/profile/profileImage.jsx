@@ -36,6 +36,7 @@ export default function ProfileImageUpload({ userId }) {
             });
     };
 
+    /*
     const handleResetImage = async () => {
         try {
             const response = await axiosClient.patch(`/profile/${userId}/reset-profile-image`);
@@ -47,7 +48,7 @@ export default function ProfileImageUpload({ userId }) {
             alert("Failed to reset profile image.");
         }
     };
-
+    */
     return (
         <div>
             <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
@@ -65,6 +66,7 @@ export default function ProfileImageUpload({ userId }) {
                 {preview && (
                     <div>
                         <p className="font-semibold">Image Preview:</p>
+                        <p>(Before saving the changes, upload your new image)</p>
                         <img src={preview} alt="Preview" className="w-32 h-32 rounded-full" />
                     </div>
                 )}

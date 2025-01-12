@@ -16,13 +16,18 @@ export default function Login() {
             email: emailRef.current.value,
             password: passwordRef.current.value,
         }
+        console.log("Payload being sent:", payload); // Log the payload before sending
+
         axiosClient.post("/login", payload).then(({ data }) => {
             setUser(data.user);
             setToken(data.token);
         }).catch(err => {
+            console.error("Login error:", err); // Add this to log the error response
             const response = err.response;
-            if (response && response.status === 422) {
-                console.log(response.data.errors);
+            if (response && (response.status === 422 || response.status === 401)) {
+                setError("Email or password wrong.");
+            } else {
+                setError("An unexpected error occurred.");
             }
         });
     }

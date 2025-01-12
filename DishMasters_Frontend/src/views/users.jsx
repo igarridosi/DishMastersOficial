@@ -149,6 +149,9 @@ export default function Users() {
                     )}
                 </table>
             </div>
+            <div className="flex justify-center mt-4">
+                <Link to="/" className="text-[#FFBD59] hover:text-[#ff9f3d]">Back to Home</Link>
+            </div>
         </div>
     );
 }

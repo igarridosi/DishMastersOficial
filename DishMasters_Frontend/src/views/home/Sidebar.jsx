@@ -5,6 +5,7 @@ import { useStateContext } from "../../contexts/contextProvider";
 import axiosClient from "../../axiosClient";
 import { Navigate, Outlet } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import ProfileImage from "../profile/profileImageComponent";
 
 const SidebarMobile = ({ setShowForm }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -248,16 +249,12 @@ const SidebarMobile = ({ setShowForm }) => {
         <div className="mt-auto">
           {token && (
             <header className="mt-auto px-4 py-4 bg-[#333333] text-white flex flex-col justify-center">
-              <div className="flex flex-row justify-center items-center mb-3 justify-around">
-                <span className="mr-4 text-white text-lg">{user?.name}</span>
+              <div className="flex flex-row items-center mb-3 justify-center">
+                <Link to={`/profile/${user?.id}`} className="mr-4 no-underline text-[#222222] font-sans bg-[#ffbd59] text-2xl text-center rotate-[-2deg] inline-block font-bold">
+                  {user?.name}
+                </Link>
                 <div className="avatar">
-                  <div className="size-10 mr-4">
-                    <img
-                      src="https://cdn.flyonui.com/fy-assets/avatar/avatar-1.png"
-                      alt="avatar"
-                      className="rounded-full"
-                    />
-                  </div>
+                  <ProfileImage />
                 </div>
               </div>
               <button
