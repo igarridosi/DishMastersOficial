@@ -5,6 +5,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import { useStateContext } from "../contexts/contextProvider";
 import axiosClient from "../axiosClient";
 import HomeComponent from "../views/index";
+import ProfileImage from "../views/profile/profileImageComponent";
 import { useNavigate } from "react-router-dom";
 
 export default function DefaultLayout() {
@@ -58,9 +59,7 @@ export default function DefaultLayout() {
                         <div className="flex items-center">
                             <span className="mr-4 text-[#222222]">{user.name}</span>
                             <div className="avatar">
-                                <div className="size-10 mr-5">
-                                    <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-1.png" alt="avatar" className="rounded-full" />
-                                </div>
+                                <ProfileImage />
                             </div>
                             <a href="#" onClick={onLogout} className="text-[#FFBD59] hover:text-yellow-500">
                                 <svg className="w-[20px] h-[20px] fill-[#8e8e8e]" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">

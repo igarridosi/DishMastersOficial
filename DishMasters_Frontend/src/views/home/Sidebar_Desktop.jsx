@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useStateContext } from "../../contexts/contextProvider";
 import axiosClient from "../../axiosClient";
 import { Navigate, Outlet } from "react-router-dom";
+import ProfileImage from "../profile/profileImageComponent";
 
 const SidebarDesktop = ({ setShowForm }) => {
   const [openSubmenu, setOpenSubmenu] = useState(null);
@@ -17,10 +18,6 @@ const SidebarDesktop = ({ setShowForm }) => {
 
   const { user, token, setUser, setToken } = useStateContext();
   const navigate = useNavigate();
-
-  const profileImageUrl = user?.profile_image
-  ? `http://localhost:8000/storage/${user.profile_image}`
-  : "https://via.placeholder.com/150"; // Default placeholder image
 
   /*
   if (!token) {
@@ -166,15 +163,7 @@ const SidebarDesktop = ({ setShowForm }) => {
                   {user?.name}
                 </Link>
                 <div className="avatar">
-                  <div className="w-[3rem] mr-3">
-                    <Link to={`/profile/${user?.id}`}>
-                    <img
-                        src={profileImageUrl}
-                        alt={`${user.name}'s profile`}
-                        className="w-12 h-12 rounded-full object-cover"
-                    />
-                    </Link>
-                  </div>
+                  <ProfileImage />
                 </div>
               </div>
               <button
