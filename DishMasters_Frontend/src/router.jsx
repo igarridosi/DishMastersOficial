@@ -8,6 +8,8 @@ import Users from './views/users';
 import UserForm from './views/UserForm';
 import HomeComponent from "./views/index";
 import UserProfile from "./views/profile/profile"
+import { Navigate } from "react-router-dom";
+import Unauthorized from './views/unauthorized';
 
 const router = createBrowserRouter([
     {
@@ -22,6 +24,7 @@ const router = createBrowserRouter([
             {
                 path: '/users',
                 element: <Users />,
+                errorElement: <Unauthorized />,
             },
             {
                 path: '/users/new',
