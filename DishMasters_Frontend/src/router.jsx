@@ -7,7 +7,7 @@ import Users from './views/users';
 //import Users from './components/users.jsx';
 import UserForm from './views/UserForm';
 import HomeComponent from "./views/index";
-import UserProfile from "./views/profile"
+import UserProfile from "./views/profile/profile"
 
 const router = createBrowserRouter([
     {

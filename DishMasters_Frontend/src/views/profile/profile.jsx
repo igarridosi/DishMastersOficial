@@ -1,9 +1,11 @@
+// resources/js/views/ProfileSettings.jsx
 import { useEffect, useState } from 'react';
-import axiosClient from '../axiosClient';
-import ProfileSidebar from './profileSidebar'
+import axiosClient from '../../axiosClient';
+import ProfileSidebar from './profileSidebar';
+import ProfileImageUpload from './profileImage';
 
 export default function ProfileSettings() {
-  const [user, setUser] = useState({ name: '', email: '', password: '', password_confirmation: '' });
+  const [user, setUser] = useState({ name: '', email: '', password: '', password_confirmation: '', profile_image: '' });
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -19,7 +21,7 @@ export default function ProfileSettings() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    axiosClient.put('/profile', user)
+    axiosClient.put(`/profile/${user.id}`, user)
       .then(() => alert('Profile updated successfully'))
       .catch((err) => console.error(err))
       .finally(() => setLoading(false));
@@ -27,11 +29,10 @@ export default function ProfileSettings() {
 
   return (
     <div className="w-9/12 mx-auto p-6 bg-white rounded shadow mt-10 mb-10 flex flex-row items-center justify-center">
-      {/* Striking Sidebar Section */}
       <div className="md:col-span-1 flex-1 items-center">
         <ProfileSidebar />
       </div>
-      <form onSubmit={handleSubmit} className='flex-1'>
+      <form onSubmit={handleSubmit} className="flex-1">
         <h2 className="text-xl font-semibold mb-4">Profile Settings</h2>
         <div className="mb-4">
           <label className="block text-sm font-medium">Name</label>
@@ -55,6 +56,7 @@ export default function ProfileSettings() {
             required
           />
         </div>
+        <ProfileImageUpload userId={user.id} />
         <div className="mb-4">
           <label className="block text-sm font-medium">New Password</label>
           <input

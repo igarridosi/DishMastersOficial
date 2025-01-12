@@ -18,6 +18,10 @@ const SidebarDesktop = ({ setShowForm }) => {
   const { user, token, setUser, setToken } = useStateContext();
   const navigate = useNavigate();
 
+  const profileImageUrl = user?.profile_image
+  ? `http://localhost:8000/storage/${user.profile_image}`
+  : "https://via.placeholder.com/150"; // Default placeholder image
+
   /*
   if (!token) {
     return <Navigate to="/" />
@@ -162,13 +166,13 @@ const SidebarDesktop = ({ setShowForm }) => {
                   {user?.name}
                 </Link>
                 <div className="avatar">
-                  <div className="size-10 mr-4">
+                  <div className="w-[3rem] mr-3">
                     <Link to={`/profile/${user?.id}`}>
-                      <img
-                        src="https://cdn.flyonui.com/fy-assets/avatar/avatar-1.png"
-                        alt="avatar"
-                        className="rounded-full"
-                      />
+                    <img
+                        src={profileImageUrl}
+                        alt={`${user.name}'s profile`}
+                        className="w-12 h-12 rounded-full object-cover"
+                    />
                     </Link>
                   </div>
                 </div>

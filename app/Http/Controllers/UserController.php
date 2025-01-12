@@ -78,23 +78,73 @@ class UserController extends Controller
     }
 
     // Update profile
-    public function updateProfile(Request $request)
+    public function updateProfile(Request $request, $id)
+    {
+        try {
+            $user = User::findOrFail($id);
+    
+            if ($request->has('reset_image') && $request->reset_image === true) {
+                // Reset the profile image
+                if ($user->profile_image && \Storage::exists($user->profile_image)) {
+                    \Storage::delete($user->profile_image);
+                }
+                $user->profile_image = null;
+            } elseif ($request->hasFile('profile_image')) {
+                // Upload a new profile image
+                $file = $request->file('profile_image');
+                $path = $file->store('profile_images', 'public');
+                $user->profile_image = $path;
+            }
+    
+            $user->save();
+    
+            return response()->json(['message' => 'Profile updated successfully', 'profile_image' => $user->profile_image]);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Failed to update profile', 'error' => $e->getMessage()], 500);
+        }
+    }
+    
+
+    public function updateProfileImage(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email,' . $request->user()->id,
-            'password' => 'nullable|min:8|confirmed',
+            'profile_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
-
-        $user = $request->user();
-        $user->update([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'password' => $validated['password'] ? bcrypt($validated['password']) : $user->password,
-        ]);
-
-        return response()->json(['message' => 'Profile updated successfully']);
+    
+        if ($request->hasFile('profile_image')) {
+            try {
+                $filePath = $request->file('profile_image')->store('profile_images', 'public');
+                if (!$filePath) {
+                    return response()->json(['message' => 'Failed to store the file'], 500);
+                }
+    
+                $user = auth()->user();
+                $user->profile_image = $filePath;
+                $user->save();
+    
+                return response()->json([
+                    'message' => 'Profile image updated successfully!',
+                    'profile_image_url' => asset('storage/' . $filePath),
+                ]);
+            } catch (\Exception $e) {
+                \Log::error('Image upload error', ['error' => $e->getMessage()]);
+                return response()->json(['message' => 'Server error: ' . $e->getMessage()], 500);
+            }
+        }
+    
+        return response()->json(['message' => 'No file uploaded'], 400);
     }
+    
+    
+    public function resetProfileImage($id)
+    {
+        $user = User::findOrFail($id);
+        $user->profile_image = null; // Set profile image to null
+        $user->save();
+    
+        return response()->json(['message' => 'Profile image reset successfully']);
+    }
+    
 
 
     /**

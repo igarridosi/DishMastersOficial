@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->enum('status', ['dishUser', 'dishAdmin'])->default('dishUser');
+            $table->string('profile_image')->nullable(); // Allows null if no image is uploaded
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('status');
+            $table->dropColumn('profile_image');
         });
     }
 };
