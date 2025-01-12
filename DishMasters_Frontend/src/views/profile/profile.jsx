@@ -3,10 +3,14 @@ import { useEffect, useState } from 'react';
 import axiosClient from '../../axiosClient';
 import ProfileSidebar from './profileSidebar';
 import ProfileImageUpload from './profileImage';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function ProfileSettings() {
   const [user, setUser] = useState({ name: '', email: '', password: '', password_confirmation: '', profile_image: '' });
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     axiosClient.get('/profile').then(({ data }) => {
@@ -22,16 +26,17 @@ export default function ProfileSettings() {
     e.preventDefault();
     setLoading(true);
     axiosClient.put(`/profile/${user.id}`, user)
-      .then(() => alert('Profile updated successfully'))
+      .then(() => {
+        alert('Profile updated successfully');
+        console.log('Redirecting to main page...');
+        navigate('/'); // Redirect to the main page
+      })
       .catch((err) => console.error(err))
       .finally(() => setLoading(false));
   };
 
   return (
-    <div className="w-9/12 mx-auto p-6 bg-white rounded shadow mt-10 mb-10 flex flex-row items-center justify-center">
-      <div className="md:col-span-1 flex-1 items-center">
-        <ProfileSidebar />
-      </div>
+    <div className="w-9/12 mx-auto p-6 bg-white rounded shadow mt-10 mb-10 flex flex-row items-center justify-center gap-4">
       <form onSubmit={handleSubmit} className="flex-1">
         <h2 className="text-xl font-semibold mb-4">Profile Settings</h2>
         <div className="mb-4">
@@ -56,7 +61,6 @@ export default function ProfileSettings() {
             required
           />
         </div>
-        <ProfileImageUpload userId={user.id} />
         <div className="mb-4">
           <label className="block text-sm font-medium">New Password</label>
           <input
@@ -85,6 +89,9 @@ export default function ProfileSettings() {
           {loading ? 'Saving...' : 'Save Changes'}
         </button>
       </form>
+      <div className="md:col-span-1 flex-1 items-center">
+      <ProfileImageUpload userId={user.id} />
+      </div>
     </div>
   );
 }

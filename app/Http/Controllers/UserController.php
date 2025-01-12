@@ -80,28 +80,20 @@ class UserController extends Controller
     // Update profile
     public function updateProfile(Request $request, $id)
     {
-        try {
-            $user = User::findOrFail($id);
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $request->user()->id,
+            'password' => 'nullable|min:8|confirmed',
+        ]);
     
-            if ($request->has('reset_image') && $request->reset_image === true) {
-                // Reset the profile image
-                if ($user->profile_image && \Storage::exists($user->profile_image)) {
-                    \Storage::delete($user->profile_image);
-                }
-                $user->profile_image = null;
-            } elseif ($request->hasFile('profile_image')) {
-                // Upload a new profile image
-                $file = $request->file('profile_image');
-                $path = $file->store('profile_images', 'public');
-                $user->profile_image = $path;
-            }
+        $user = $request->user();
+        $user->update([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => $validated['password'] ? bcrypt($validated['password']) : $user->password,
+        ]);
     
-            $user->save();
-    
-            return response()->json(['message' => 'Profile updated successfully', 'profile_image' => $user->profile_image]);
-        } catch (\Exception $e) {
-            return response()->json(['message' => 'Failed to update profile', 'error' => $e->getMessage()], 500);
-        }
+        return response()->json(['message' => 'Profile updated successfully']);
     }
     
 

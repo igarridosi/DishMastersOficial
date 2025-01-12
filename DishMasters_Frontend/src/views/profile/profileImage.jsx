@@ -68,7 +68,9 @@ export default function ProfileImageUpload({ userId }) {
                         <img src={preview} alt="Preview" className="w-32 h-32 rounded-full" />
                     </div>
                 )}
-                <div className="mt-4">
+                
+                <div className="p-2">
+                    {/* 
                     <button
                         type="button" // Make sure the button type is 'button'
                         onClick={handleResetImage}
@@ -76,6 +78,7 @@ export default function ProfileImageUpload({ userId }) {
                     >
                         Reset Image
                     </button>
+                    */}
                     <button
                         type="button" // Make sure the button type is 'button'
                         onClick={handleImageUpload} // Manually handle image upload

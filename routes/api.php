@@ -25,7 +25,7 @@ Route::post('/register',[AuthController::class,'register']);
 Route::put('/users/{id}/status', [UserController::class, 'updateStatus']);
 
 Route::get('/profile', [UserController::class, 'profile'])->middleware('auth');
-Route::put('/profile', [UserController::class, 'updateProfile'])->middleware('auth');
+Route::put('/profile/{id}', [UserController::class, 'updateProfile'])->middleware('auth');
 
 Route::post('/profile/{id}/profile-image', [UserController::class, 'updateProfileImage'])->middleware('auth:sanctum');
 Route::patch('/profile/{id}/reset-profile-image', [UserController::class, 'resetProfileImage']);
