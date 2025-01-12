@@ -168,7 +168,7 @@ const SidebarDesktop = ({ setShowForm }) => {
               </div>
               <button
                 onClick={onLogout}
-                className="relative inline-flex items-center justify-center px-3 py-2 overflow-hidden font-medium text-black transition duration-300 ease-out border-2 border-[#222222] hover:border-red-500 rounded-lg shadow-md group"
+                className="relative inline-flex items-center justify-center w-[7rem] px-3 py-2 overflow-hidden font-medium text-black transition duration-300 ease-out border-2 border-[#222222] hover:border-red-500 rounded-lg shadow-md group"
               >
                 <span
                   className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-white group-hover:translate-x-0 ease">
@@ -177,7 +177,7 @@ const SidebarDesktop = ({ setShowForm }) => {
                   </svg>
                 </span>
                 <span
-                  className="absolute flex items-center text-base font-semibold justify-center w-full h-full text-[#222222] transition-all duration-300 transform group-hover:translate-x-full ease">{t('log_out')}
+                  className="bg-white absolute flex items-center text-base font-semibold justify-center w-full h-full text-[#222222] transition-all duration-300 transform group-hover:translate-x-full ease">{t('log_out')}
                 </span>
                 <span className="relative text-base font-semibold invisible">Log Out</span>
               </button>

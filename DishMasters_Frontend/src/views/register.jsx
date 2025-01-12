@@ -28,6 +28,11 @@ export default function register(){
           return;
       }
 
+      if (payload.name.length > 10) {
+        setError("Username must be maximun 10 characters long.");
+        return;
+    }
+
       if (payload.password.length < 8) {
           setError("Password must be at least 8 characters long.");
           return;
