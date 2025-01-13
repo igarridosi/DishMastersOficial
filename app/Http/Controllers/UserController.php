@@ -163,8 +163,9 @@ class UserController extends Controller
         return response()->json(['error' => 'Failed to restore user'], 500);
     }
 
-    public function permanentlyDeleteUser(User $user)
+    public function permanentlyDeleteUser($id)
     {
+        $user = User::withTrashed()->findOrFail($id);
         $user->forceDelete(); // Permanently delete the user
         return response()->json(['message' => 'User permanently deleted']);
     }

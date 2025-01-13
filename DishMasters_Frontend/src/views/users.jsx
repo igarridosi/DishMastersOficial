@@ -47,6 +47,23 @@ export default function Users() {
             });
     };
 
+    const permanentlyDeleteUser = (user) => {
+        if (!window.confirm(`Are you sure you want to permanently delete ${user.name}? This action cannot be undone!`)) {
+            return;
+        }
+
+        axiosClient
+            .delete(`/users/${user.id}/force-delete`)
+            .then(() => {
+                alert("User permanently deleted successfully");
+                getUsers(); // Refresh the user list
+            })
+            .catch((err) => {
+                console.error(err);
+                alert("Failed to permanently delete user. Please try again.");
+            });
+    };
+
     const updateStatus = (id, status) => {
         setEditedStatuses((prev) => ({ ...prev, [id]: status })); // Update editedStatuses state
         axiosClient
@@ -140,9 +157,10 @@ export default function Users() {
                                             </svg>
                                         </Link>
                                         &nbsp;
+                                        {/*
                                         <button
                                             className="text-white py-1 px-4 rounded-md"
-                                            onClick={(ev) => onDeleteClick(u)}
+                                            onClick={(ev) => permanentlyDeleteUser(u)}
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -156,23 +174,35 @@ export default function Users() {
                                                 />
                                             </svg>
                                         </button>
+                                        */}
                                     </td>
                                     <td>
-                                        {u.deleted_at ? (
-                                            <button
-                                                className="text-green-600 hover:text-green-800"
-                                                onClick={() => restoreUser(u)}
-                                            >
-                                                Restore
-                                            </button>
-                                        ) : (
-                                            <button
-                                                className="text-red-600 hover:text-red-800"
-                                                onClick={() => onDeleteClick(u)}
-                                            >
-                                                Soft Delete
-                                            </button>
-                                        )}
+                                        <td>
+                                            {u.deleted_at ? (
+                                                <>
+                                                    <button
+                                                        className="text-green-600 hover:text-green-800"
+                                                        onClick={() => restoreUser(u)}
+                                                    >
+                                                        Restore
+                                                    </button>
+                                                    &nbsp;|&nbsp;
+                                                    <button
+                                                        className="text-red-600 hover:text-red-800"
+                                                        onClick={() => permanentlyDeleteUser(u)}
+                                                    >
+                                                        Permanently Delete
+                                                    </button>
+                                                </>
+                                            ) : (
+                                                <button
+                                                    className="text-red-600 hover:text-red-800"
+                                                    onClick={() => onDeleteClick(u)}
+                                                >
+                                                    Soft Delete
+                                                </button>
+                                            )}
+                                        </td>
                                     </td>
                                 </tr>
                             ))}
