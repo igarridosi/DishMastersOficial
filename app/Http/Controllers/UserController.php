@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         if (auth()->check() && auth()->user()->status === 'dishAdmin') {
             return UserResource::collection(
-                User::query()->orderBy('id', 'desc')->get(['id', 'name', 'email', 'status'])
+                User::withTrashed()->orderBy('id', 'desc')->get(['id', 'name', 'email', 'status', 'deleted_at'])
             );
         }
     }
@@ -144,8 +144,28 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        $user->delete();
+        if ($user->delete()) {
+            return response()->json(['message' => 'User soft deleted successfully']);
+        }
+    
+        return response()->json(['error' => 'Failed to soft delete user'], 500);
+    }
 
-        return response('',204);
+    
+    public function restoreUser($id)
+    {
+        $user = User::withTrashed()->findOrFail($id); // Retrieve a single user by ID, including trashed ones
+
+        if ($user->restore()) {
+            return response()->json(['message' => 'User restored successfully']);
+        }
+    
+        return response()->json(['error' => 'Failed to restore user'], 500);
+    }
+
+    public function permanentlyDeleteUser(User $user)
+    {
+        $user->forceDelete(); // Permanently delete the user
+        return response()->json(['message' => 'User permanently deleted']);
     }
 }

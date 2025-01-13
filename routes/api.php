@@ -15,6 +15,9 @@ Route::middleware('auth:sanctum')->group(function() {
 
     Route::apiResource('/users', UserController::class);
     Route::put('/users/{id}/status', [UserController::class, 'updateStatus']);
+
+    Route::post('/users/{id}/restore', [UserController::class, 'restoreUser']);
+    Route::delete('/users/{id}/force-delete', [UserController::class, 'permanentlyDeleteUser']);
 });
 
 Route::post('/login',[AuthController::class,'login']);

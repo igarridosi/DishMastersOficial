@@ -11,6 +11,7 @@ export default function Users() {
         getUsers();
     }, []);
 
+
     const getUsers = () => {
         setLoading(true);
         axiosClient.get('/users')
@@ -25,12 +26,24 @@ export default function Users() {
     };
 
     const onDeleteClick = (user) => {
-        if (!window.confirm("Are you sure you want to delete this user?")) {
+        console.log(user);
+        if (!window.confirm("Are you sure you want to soft delete this user?")) {
             return;
         }
         axiosClient.delete(`/users/${user.id}`)
             .then(() => {
                 getUsers();
+            });
+    };
+
+    const restoreUser = (user) => {
+        axiosClient.post(`/users/${user.id}/restore`)
+            .then(() => {
+                alert("User restored successfully");
+                getUsers(); // Refresh the user list
+            })
+            .catch((err) => {
+                console.error(err);
             });
     };
 
@@ -64,7 +77,7 @@ export default function Users() {
                             <th className="py-2 px-4">Name</th>
                             <th className="py-2 px-4">Email</th>
                             <th className="py-2 px-4">Status</th>
-                            <th className="py-2 px-4">Actions</th>
+                            <th className="py-2 px-4">User Situation</th>
                         </tr>
                     </thead>
                     {loading && (
@@ -102,6 +115,7 @@ export default function Users() {
                                             <option value="dishAdmin">dishAdmin</option>
                                         </select>
                                     </td>
+                                    <td className="py-2 px-4 italic">{u.deleted_at ? "Deleted" : "Active"}</td>
                                     <td className="py-2 px-4 flex items-center">
                                         <Link
                                             className="text-white py-2 px-4 rounded-md text-decoration-line: none"
@@ -142,6 +156,23 @@ export default function Users() {
                                                 />
                                             </svg>
                                         </button>
+                                    </td>
+                                    <td>
+                                        {u.deleted_at ? (
+                                            <button
+                                                className="text-green-600 hover:text-green-800"
+                                                onClick={() => restoreUser(u)}
+                                            >
+                                                Restore
+                                            </button>
+                                        ) : (
+                                            <button
+                                                className="text-red-600 hover:text-red-800"
+                                                onClick={() => onDeleteClick(u)}
+                                            >
+                                                Soft Delete
+                                            </button>
+                                        )}
                                     </td>
                                 </tr>
                             ))}
