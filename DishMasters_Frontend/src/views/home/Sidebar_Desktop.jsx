@@ -19,11 +19,9 @@ const SidebarDesktop = ({ setShowForm }) => {
   const { user, token, setUser, setToken } = useStateContext();
   const navigate = useNavigate();
 
-  /*
   if (!token) {
-    return <Navigate to="/" />
+    return <Navigate to="/login" />
   }
-    */
 
   const onLogout = async (ev) => {
     ev.preventDefault();
@@ -34,7 +32,7 @@ const SidebarDesktop = ({ setShowForm }) => {
         setUser(null);
         setToken(null);
         localStorage.removeItem('authToken');
-        navigate('/');
+        navigate('/login');
       }
     } catch (error) {
       console.error("Error during logout:", error.response || error.message);
@@ -83,7 +81,7 @@ const SidebarDesktop = ({ setShowForm }) => {
             {openSubmenu === 'myFeed' && (
               <ul className="ml-4 mt-2">
                 <li><a href="myFeed.html" target="_blank" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('main_page')}</a></li>
-                <li><a href="#" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('dishy_challenge')}</a></li>
+                <li><a href="/challenges" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('dishy_challenge')}</a></li>
                 <li><a href="#" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('dishcuss')}</a></li>
               </ul>
             )}
@@ -108,7 +106,7 @@ const SidebarDesktop = ({ setShowForm }) => {
               <ul className="ml-4 mt-2">
                 <li><a href="#" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('taste_trends')}</a></li>
                 <li><a href="seasonRecipes.html" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('season_recipes')}</a></li>
-                <li><a href="#" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('food_spots')}</a></li>
+                <li><a href="/spots" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('food_spots')}</a></li>
                 <li><a href="#" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('world_dishes')}</a></li>
               </ul>
             )}
@@ -131,13 +129,13 @@ const SidebarDesktop = ({ setShowForm }) => {
             {openSubmenu === 'about' && (
               <ul className="ml-4 mt-2">
                 <li>
-                  <a href="#" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('about_us')}</a>
+                  <a href="/about" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('about_us')}</a>
                 </li>
                 <li>
                   <a href="#" onClick={(e) => { e.preventDefault(); setShowForm(true); }} className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('contact_us')}</a>
                 </li>
                 <li>
-                  <a href="#" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('faq')}</a>
+                  <a href="/faq" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('faq')}</a>
                 </li>
               </ul>
             )}

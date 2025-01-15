@@ -1,0 +1,35 @@
+[
+    {
+        "id": "1",
+        "title": "Challenge 1 - Spanish Roscon de reyes",
+        "description": "Bun made with a sweet toroid-shaped dough decorated with slices of candied, candied or crystallized fruit of various colors.",
+        "start": "2025-01-01",
+        "deadline": "2025-01-05",
+        "img": "/img/challenges/challenge1.jpg",
+        "status": "finished",
+        "color": "danger",
+        "winner": "soon"
+    },
+    {
+        "id": "2",
+        "title": "Challenge 2 - Chocolate cake",
+        "description": "A rich, moist chocolate birthday cake layered with creamy ganache and buttercream, perfect for any celebration.",
+        "start": "2025-01-01",
+        "deadline": "2025-01-10",
+        "img": "/img/challenges/challenge2.jpg",
+        "status": "finished",
+        "color": "danger",
+        "winner": "soon"
+    },
+    {
+        "id": "3",
+        "title": "Challenge 3 - Worldwide Croquette day",
+        "description": " fried roll typically made from a mixture of mashed potatoes, meat, fish, cheese, or vegetables, combined with béchamel or another binder.",
+        "start": "2025-01-10",
+        "deadline": "2025-01-16",
+        "img": "/img/challenges/challenge3.jpg",
+        "status": "ongoing",
+        "color": "success",
+        "winner": "soon"
+    }
+]

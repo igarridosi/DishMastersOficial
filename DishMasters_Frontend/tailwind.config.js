@@ -5,7 +5,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        'DishColor': 'hsl(36, 100%, 67%)'
+        'DishColor': 'hsl(36, 100%, 67%)',
+        'dishyColor':'#ffbd59',
+        
       }
     },
   },

@@ -42,6 +42,7 @@ class Kernel extends HttpKernel
             \Illuminate\Http\Middleware\Cors::class,
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
+            \App\Http\Middleware\CheckTokenInvalidation::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];

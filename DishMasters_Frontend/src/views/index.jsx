@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 import '../index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,17 +15,48 @@ import Footer from './home/Footer';
 
 import './i18n';
 
+import axiosClient from '../axiosClient';
+import { useNavigate } from 'react-router-dom';
+
 const index = () => {
   const [showForm, setShowForm] = useState(false); // State to manage form visibility
+  const navigate = useNavigate();
+
+  const onLogout = async () => {
+    try {
+      const response = await axiosClient.post('/logout');
+      if (response.status === 200) {
+        // Clear the `ACCESS_TOKEN` cookie
+        document.cookie = "ACCESS_TOKEN=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        console.log("Logged out successfully.");
+        localStorage.removeItem('authToken');
+        navigate('/login'); // Redirect to home or login page
+      }
+    } catch (error) {
+      console.error("Error during logout:", error.response || error.message);
+    }
+  };
+
+  useEffect(() => {
+    const handleUnload = async () => {
+      await onLogout(); // Trigger the logout function
+    };
+
+    window.addEventListener('unload', handleUnload);
+
+    return () => {
+      window.removeEventListener('unload', handleUnload); // Cleanup on unmount
+    };
+  }, []);
 
   return (
     <div className="container-fluid">
       <div className="row flex-wrap">
-        
+
         {/* Sidebar Section */}
         <div className="col-12 col-md-3 col-lg-2" id='canvasMenu'>
           <Sidebar_Desktop setShowForm={setShowForm} /> {/* Pass setShowForm as prop */}
-          <Sidebar setShowForm={setShowForm}/>
+          <Sidebar setShowForm={setShowForm} />
         </div>
 
         {/* Main Content Section */}
@@ -41,6 +72,8 @@ const index = () => {
       {/* Display Form Overlay */}
       {showForm && <FormComponent setShowForm={setShowForm} />} {/* Show form conditionally */}
     </div>
+
+
   );
 };
 

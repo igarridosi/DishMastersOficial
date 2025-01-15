@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "name": "Azurmendi Restaurant",
+    "province": "Bizkaia",
+    "estimated_price": "€€€",
+    "category": "Restaurant",
+    "location": "Larrabetzu",
+    "description": "Three-Michelin-star restaurant offering avant-garde Basque cuisine, focused on innovation, sustainability, and local ingredients.",
+    "phone": "944 55 35 55",
+    "maps": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3476.8401397368953!2d-2.8186047234610974!3d43.26056077773647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e4854720ee109%3A0x909b2223a4c812fe!2sRestaurante%20Azurmendi!5e1!3m2!1ses!2ses!4v1736760399772!5m2!1ses!2ses' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>"
+  },
+  {
+    "id": 2,
+    "name": "Arzak",
+    "province": "Gipuzkoa",
+    "estimated_price": "€€€",
+    "category": "Restaurant",
+    "location": "San Sebastián",
+    "description": "A prestigious three-Michelin-star restaurant that fuses Basque culinary traditions with inovations, offering a dynamic and creative experience.",
+    "phone": "943 27 84 65",
+    "maps": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6946.7208902215925!2d-1.9541855097474012!3d43.32146109936811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51a54335955e93%3A0xaf9ddc725f5ed737!2sRestaurante%20Arzak!5e1!3m2!1ses!2ses!4v1736761579282!5m2!1ses!2ses' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>"
+  },
+  {
+    "id": 3,
+    "name": "Campero Donostia",
+    "province": "Gipuzkoa",
+    "estimated_price": "€",
+    "category": "Pintxos and bokatas",
+    "location": "San Sebastián",
+    "description": "A beloved local spot offering delicious Basque pintxos and sandwiches, bringing a traditional flavor to modern-day culinary enthusiasts.",
+    "phone": "943 27 14 95",
+    "maps": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d409.76577826357567!2d-1.9711858944009844!3d43.32683123556119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51a543d4e259fd%3A0x240e1eb23433295f!2sCampero%20Donostia!5e1!3m2!1ses!2ses!4v1736761821324!5m2!1ses!2ses' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>"
+  },
+  {
+    "id": 4,
+    "name": "Kalezar",
+    "province": "Araba",
+    "estimated_price": "€€",
+    "category": "Restaurant",
+    "location": "Vitoria - Gazteiz",
+    "description": "A modern Basque restaurant that combines traditional flavors, creating a unique and high-quality dining experience.",
+    "phone": "945 20 36 66",
+    "maps": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27996.166400576483!2d-2.689950795747852!3d42.861911260636155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4fc245567b077d%3A0x9f6ab66e2e38e8bd!2zIkthbGV6YXIi!5e1!3m2!1ses!2ses!4v1736762511731!5m2!1ses!2ses' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>"
+  },
+  {
+    "id": 5,
+    "name": "Tximiso Taberna",
+    "province": "Araba",
+    "estimated_price": "€",
+    "category": "Pintxos and bokatas",
+    "location": "Vitoria - Gazteiz",
+    "description": "A casual yet flavorful spot offering delicious pintxos and sandwiches, featuring a mix of traditional and modern flavors in every bite.",
+    "phone": " 945 64 19 45",
+    "maps": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56010.587751746396!2d-2.6803777445121537!3d42.841778656004124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4fc26df7def103%3A0xd65c39f175659849!2sTximiso%20Taberna!5e1!3m2!1ses!2ses!4v1736762771808!5m2!1ses!2ses' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>"
+  },
+  {
+    "id": 6,
+    "name": "Sagarrondo Jatetxea",
+    "province": "Bizkaia",
+    "estimated_price": "€€",
+    "category": "Restaurant",
+    "location": "Bilbao",
+    "description": "At Sagarrondo we have more than 50 years of experience cooking quality food with care. Lunch, dinner, pintxos bar and takeaway.",
+    "phone": "946 55 87 79",
+    "maps": "<iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3474.371578439462!2d-2.9718584000000003!3d43.3037717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e5a892daa02b3%3A0xcf877983bec47cb!2sRestaurante%20Sagarrondo%20Jatetxea!5e1!3m2!1ses!2ses!4v1736767218022!5m2!1ses!2ses width=600 height=450 style=border:0; allowfullscreen loading=lazy referrerpolicy=no-referrer-when-downgrade></iframe>"
+  },
+  {
+    "id": 7,
+    "name": "Dandaka jatetxea",
+    "province": "Bizkaia",
+    "estimated_price": "€€",
+    "category": "Restaurant",
+    "location": "Bilbao",
+    "description": "Cozy and family restaurant where you can taste traditional Basque food with the best Eusko label meat. Cooking with charcoal.",
+    "phone": "944 53 00 06",
+    "maps": "<iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13896.56149353845!2d-2.96393675929986!3d43.30781705687285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e5ab94fd5ad79%3A0xd4487166126b8607!2sRestaurante%20Dandaka%20jatetxea!5e1!3m2!1ses!2ses!4v1736767409218!5m2!1ses!2ses width=600 height=450 style=border:0; allowfullscreen loading=lazy referrerpolicy=no-referrer-when-downgrade></iframe>"
+  },
+  {
+    "id": 8,
+    "name": "Lizuniaga",
+    "province": "Nafarroa",
+    "estimated_price": "€€",
+    "category": "Restaurant",
+    "location": "Bera",
+    "description": "Located in the Col de Lizuniaga, our hostel-restaurant is the perfect place to disconnect from the routine and enjoy nature.",
+    "phone": "948 63 10 31",
+    "maps": "<iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6951.142574831241!2d-1.6357727427047744!3d43.282775720585256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd511ae2714d4225%3A0xffb0d44ae5f8154f!2sLizuniaga!5e1!3m2!1ses!2ses!4v1736767838827!5m2!1ses!2ses width=600 height=450 style=border:0; allowfullscreen loading=lazy referrerpolicy=no-referrer-when-downgrade></iframe>"
+  },
+  {
+    "id": 9,
+    "name": "Restaurante Gandarias",
+    "province": "Gipuzkoa",
+    "estimated_price": "€€",
+    "category": "Restaurant",
+    "location": "San Sebastián",
+    "description": "The Gandarias restaurant in Donostia is famous for its pintxos and menu based on top quality products. Gluten-free options.",
+    "phone": "943 42 63 62",
+    "maps": "<iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3473.214004625!2d-1.9883862994353134!3d43.324022540778444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51a54c4a671fb5%3A0xdc7e07e1ca483ca8!2sRestaurante%20Gandarias!5e1!3m2!1ses!2ses!4v1736767957756!5m2!1ses!2ses width=600 height=450 style=border:0; allowfullscreen loading=lazy referrerpolicy=no-referrer-when-downgrade></iframe>"
+  },
+  {
+    "id": 10,
+    "name": "Mesón Portaletas",
+    "province": "Gipuzkoa",
+    "estimated_price": "€€",
+    "category": "Pintxos and bokatas",
+    "location": "San Sebastián",
+    "description": "Get ready to enjoy high quality products. Combine our “Pintxos & Tapas” as you like, as well as our specialty in rice dishes.",
+    "phone": "943 43 47 23",
+    "maps": "<iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1032.6057894736382!2d-1.987523283032517!3d43.32325505361524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51a54d4000f2bb%3A0x1ea1980f3f89bef2!2sMes%C3%B3n%20Portaletas!5e1!3m2!1ses!2ses!4v1736769117982!5m2!1ses!2ses width=600 height=450 style=border:0; allowfullscreen loading=lazy referrerpolicy=no-referrer-when-downgrade></iframe>"
+  },
+  {
+    "id": 11,
+    "name": "Bar Jai Alai",
+    "province": "Bizkaia",
+    "estimated_price": "€",
+    "category": "Pintxos and bokatas",
+    "location": "Bilbao",
+    "description": "Hello friends! If you are looking for a great place to enjoy delicious tapas and a cozy atmosphere, you should visit Bar Jai Alai.",
+    "phone": "944 98 70 90",
+    "maps": "<iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8259.767750324072!2d-3.009167104266874!3d43.33118638815801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e5a2cdee29ec3%3A0xf091fb6a7e2bc3cd!2sBar%20Jai%20Alai!5e1!3m2!1ses!2ses!4v1736770249318!5m2!1ses!2ses width=600 height=450 style=border:0; allowfullscreen loading=lazy referrerpolicy=no-referrer-when-downgrade></iframe>"
+  },
+  {
+    "id": 12,
+    "name": "Restaurante Alhambra",
+    "province": "Nafarroa",
+    "estimated_price": "€€€",
+    "category": "Restaurant",
+    "location": "Iruña",
+    "description": "In the kitchen, Javier Díaz Zalduendo and his team are in constant evolution. Respecting and treating seasonal products well.",
+    "phone": "948 24 50 07",
+    "maps": "<iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28017.5212632923!2d-1.6566607889813179!3d42.81479656939625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd509255f196c213%3A0xfda972f18bb90b45!2sRestaurante%20Alhambra!5e1!3m2!1ses!2ses!4v1736771377793!5m2!1ses!2ses width=600 height=450 style=border:0; allowfullscreen loading=lazy referrerpolicy=no-referrer-when-downgrade></iframe>"
+  }
+]
