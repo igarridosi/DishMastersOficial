@@ -4,6 +4,15 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+
+Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])
+    ->middleware(['auth', 'signed'])
+    ->name('verification.verify');
+
+Route::post('/email/resend', [VerificationController::class, 'resend'])
+    ->middleware('auth')
+    ->name('verification.resend');
 
 
 Route::middleware('auth:sanctum')->group(function() {

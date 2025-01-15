@@ -24,8 +24,8 @@ function SeasonRecipes() {
 
     return (
         <div className="container mt-5 d-flex flex-column justify-content-center align-items-center" id="main-heading">
-            <h1 className="h5 h1-md text-center">
-                Season<i className="text-white"> Recipes </i> Challenges
+            <h1 className="h5 h1-md text-center uppercase">
+                Season<i className="text-white font-sans"> Recipes </i> Challenges
             </h1>
 
             <div className="row pt-16 justify-content-center">

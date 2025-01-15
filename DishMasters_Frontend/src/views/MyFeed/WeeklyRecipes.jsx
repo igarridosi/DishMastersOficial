@@ -23,8 +23,8 @@ function SeasonRecipes() {
 
     return (
         <div className="container mt-5 d-flex flex-column justify-content-center align-items-center" id="main-heading">
-            <h1 className="h5 h1-md text-center">
-                Weekly<i className="text-white"> Recipes </i> Challenges
+            <h1 className="h5 h1-md text-center uppercase">
+                Weekly<i className="text-white font-sans"> Recipes </i> Challenges
             </h1>
 
             <div className="row pt-16 justify-content-center">
@@ -42,7 +42,7 @@ function SeasonRecipes() {
                                 </div>
                                 <img src={recipe.img} alt={recipe.title} className="img-fluid mx-auto d-block" />
                                 <Link to={`/weekly/${recipe.id}`}>
-                                    <button type="button" className="mt-2 text-black bg-#FFBD59 bg-dishColor focus:outline focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2">
+                                    <button type="button" className="mt-2 text-black bg-#FFBD59 bg-DishColor focus:outline focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2">
                                         More info
                                     </button>
                                 </Link>

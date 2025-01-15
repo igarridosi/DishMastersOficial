@@ -65,7 +65,7 @@ function RecipeMoreInfo() {
                     {recipe.status === "ongoing" && (
                         <button
                             onClick={() => setShowForm(true)}
-                            className="self-start inline-flex items-end justify-center px-8 py-3 bg-dishColor text-white font-semibold rounded-md transition duration-300 ease-in-out hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            className="self-start inline-flex items-end justify-center px-8 py-3 bg-DishColor text-white font-semibold rounded-md transition duration-300 ease-in-out hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-800"
                         >
                             Register
                         </button>

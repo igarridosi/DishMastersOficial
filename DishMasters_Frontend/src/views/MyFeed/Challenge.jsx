@@ -20,24 +20,26 @@ import React from 'react';
 function Challenge() {
     return (
         <div className="container mt-5 d-flex flex-column justify-content-center align-items-center" id="main-heading">
-            <h1 className="h5 h1-md">
-                Dishy<i className="text-white"> Challenges </i>
+            <h1 className="h5 h1-md uppercase">
+                Dishy<i className="text-white font-sans"> Challenges </i>
             </h1>
 
-            <div className="d-flex justify-content-center mt-10">
-                <div className="text-center mx-3">
+            <div className="d-flex justify-content-center mt-20">
+                <div className="text-center mx-3 transform transition-transform duration-300 ease-in-out hover:scale-105">
+                    <p className="mt-2 text-xl font-semibold text-gray-800 mb-4 leading-relaxed">Special season Recipes</p>
                     <a href="/season" className="image-hover">
                         <img src="/img/seasonRecipes/season.webp" alt="Season Recipes" className="img-fluid" />
                     </a>
-                    <p className="mt-2">Special season Recipes</p>
                 </div>
-                <div className="text-center mx-3">
+                <div className="text-center mx-3 transform transition-transform duration-300 ease-in-out hover:scale-105">
+                    <p className="mt-2 text-xl font-semibold text-gray-800 mb-4 leading-relaxed">Weekly Dishy Challenges</p>
                     <a href="/weekly" className="image-hover">
                         <img src="/img/seasonRecipes/dishyC.webp" alt="Dishy C" className="img-fluid" />
                     </a>
-                    <p className="mt-2">Weekly Dishy Challenges</p>
                 </div>
             </div>
+
+            <div className="mt-20 mb-8 border-1 border-gray-300 w-100"></div>
 
             <div className="space-y-4 w-full mt-12 overflow-y-auto">
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
