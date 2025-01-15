@@ -12,22 +12,22 @@ import { Navigate } from "react-router-dom";
 import Unauthorized from './views/unauthorized';
 
 // ABOUT US
-import HeaderAbout from './views/AboutUs/HeaderAbout';
-import ContentAbout from './views/AboutUs/Content';
+import HeaderAbout from './views/aboutUs/HeaderAbout';
+import ContentAbout from './views/aboutUs/Content';
 
 import FAQ from './views/FAQ/FAQ'
 import Footer from './views/home/Footer'
 
 //RESTAURANTS
-import HeaderRes from './views/Restaurants/Header';
-import Spots from './views/Restaurants/spots';
+import HeaderRes from './views/foodSpots/Header';
+import Spots from './views/foodSpots/spots';
 
 // CHALLENGES
-import Challenge from './views/MyFeed/Challenge';
-import SeasonRecipes from './views/MyFeed/SeasonRecipes';
-import WeeklyRecipes from './views/MyFeed/WeeklyRecipes';
-import MoreSeason from './views/MyFeed/MoreInfoSeason';
-import MoreWeek from './views/MyFeed/MoreInfoWeek';
+import Challenge from './views/challenges/Challenge';
+import SeasonRecipes from './views/challenges/SeasonRecipes';
+import WeeklyRecipes from './views/challenges/WeeklyRecipes';
+import MoreSeason from './views/challenges/MoreInfoSeason';
+import MoreWeek from './views/challenges/MoreInfoWeek';
 
 const router = createBrowserRouter([
     {
