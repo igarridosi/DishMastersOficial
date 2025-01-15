@@ -1,9 +1,9 @@
-import { defineConfig } from 'tailwindcss';
-import forms from '@tailwindcss/forms'; // Example plugin
+import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 
-export default defineConfig({
-    content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: ['./resources/**/*.blade.php', './src/**/*.{js,jsx,ts,tsx}'],
     theme: {
         extend: {
             colors: {
@@ -14,4 +14,4 @@ export default defineConfig({
         },
     },
     plugins: [forms, typography],
-});
+};
