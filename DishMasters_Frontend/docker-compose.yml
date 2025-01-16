@@ -1,0 +1,11 @@
+# Servidor nginx
+services:
+  web:
+          # versión
+    image: nginx:latest
+    # Puerto 8080 
+    ports:
+      - "8080:80"
+    volumes:
+      - ./dist:/var/www/html
+      - ./default.conf:/etc/nginx/conf.d/default.conf
