@@ -5,14 +5,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
-
-Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])
-    ->middleware(['auth', 'signed'])
-    ->name('verification.verify');
-
-Route::post('/email/resend', [VerificationController::class, 'resend'])
-    ->middleware('auth')
-    ->name('verification.resend');
+use App\Http\Controllers\DishController;
 
 
 Route::middleware('auth:sanctum')->group(function() {
@@ -42,4 +35,9 @@ Route::put('/profile/{id}', [UserController::class, 'updateProfile'])->middlewar
 Route::post('/profile/{id}/profile-image', [UserController::class, 'updateProfileImage'])->middleware('auth:sanctum');
 Route::patch('/profile/{id}/reset-profile-image', [UserController::class, 'resetProfileImage']);
 
-
+Route::get('/dishcuss/getDishcussings', [DishController::class, 'getDishcussings']);
+Route::get('/dishcuss/getDishComments', [DishController::class, 'getDishComments']);
+Route::post('/dishcuss/saveDishcussing', [DishController::class, 'saveDishcussing']);
+Route::post('/dishcuss/saveDishComment', [DishController::class, 'saveDishComment']);
+Route::post('/dishcuss/updateDishcussing', [DishController::class, 'updateDishcussing']);
+Route::post('/dishcuss/updateDishComment', [DishController::class, 'updateDishComment']);

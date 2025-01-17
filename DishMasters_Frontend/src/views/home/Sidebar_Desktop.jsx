@@ -80,9 +80,9 @@ const SidebarDesktop = ({ setShowForm }) => {
             </button>
             {openSubmenu === 'myFeed' && (
               <ul className="ml-4 mt-2">
-                <li><a href="myFeed.html" target="_blank" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('main_page')}</a></li>
+                <li><a href="#" target="_blank" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('main_page')}</a></li>
                 <li><a href="/challenges" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('dishy_challenge')}</a></li>
-                <li><a href="#" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('dishcuss')}</a></li>
+                <li><a href="/dishcuss" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('dishcuss')}</a></li>
               </ul>
             )}
           </li>

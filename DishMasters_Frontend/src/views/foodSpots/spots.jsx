@@ -59,9 +59,9 @@ const Spots = () => {
             className="block w-full p-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
             onChange={handleProvinceChange}
           >
-            <option value="">All Provinces</option>
+            <option value="" className="font-sans">All Provinces</option>
             {provinces.map((province, index) => (
-              <option key={index} value={province}>
+              <option key={index} value={province} className="font-sans">
                 {province}
               </option>
             ))}
@@ -77,9 +77,9 @@ const Spots = () => {
             className="block w-full p-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
             onChange={handleCategoryChange}
           >
-            <option value="">All Categories</option>
+            <option value="" className="font-sans">All Categories</option>
             {categories.map((category, index) => (
-              <option key={index} value={category}>
+              <option key={index} value={category} className="font-sans">
                 {category}
               </option>
             ))}
@@ -95,10 +95,10 @@ const Spots = () => {
             className="block w-full p-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
             onChange={handlePriceChange}
           >
-            <option value="">All Prices</option>
-            <option value="€">Cheap - €</option>
-            <option value="€€">Medium - €€</option>
-            <option value="€€€">Expensive - €€€</option>
+            <option value="" className="font-sans">All Prices</option>
+            <option value="€" className="font-sans">Cheap - €</option>
+            <option value="€€" className="font-sans">Medium - €€</option>
+            <option value="€€€" className="font-sans">Expensive - €€€</option>
           </select>
         </div>
       </form>

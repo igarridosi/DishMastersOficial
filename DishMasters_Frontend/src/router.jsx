@@ -18,6 +18,8 @@ import ContentAbout from './views/aboutUs/Content';
 import FAQ from './views/FAQ/FAQ'
 import Footer from './views/home/Footer'
 
+import DishCuss from './views/dishCuss/DishcussMain';
+
 //RESTAURANTS
 import HeaderRes from './views/foodSpots/Header';
 import Spots from './views/foodSpots/spots';
@@ -66,19 +68,27 @@ const router = createBrowserRouter([
                     </div>
             },
             {
+                path: '/challenges',
+                element:
+                    <div>
+                        <Challenge />
+                        <Footer />
+                    </div>
+            },
+            {
+                path: '/dishcuss',
+                element:
+                    <div>
+                        <DishCuss />
+                        <Footer />
+                    </div>
+            },
+            {
                 path: '/spots',
                 element:
                     <div>
                         <HeaderRes />
                         <Spots />
-                        <Footer />
-                    </div>
-            },
-            {
-                path: '/challenges',
-                element:
-                    <div>
-                        <Challenge />
                         <Footer />
                     </div>
             },
