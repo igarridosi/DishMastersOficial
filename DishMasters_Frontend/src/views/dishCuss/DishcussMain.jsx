@@ -98,7 +98,7 @@ function App() {
               placeholder="Enter text"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              className="block w-full p-2 border border-gray-300 rounded"
+              className="block w-full p-2 border border-gray-300 rounded min-w-[30rem] min-h-[10rem]"
             />
             <button
               onClick={clicked}

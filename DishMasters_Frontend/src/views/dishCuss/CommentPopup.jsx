@@ -33,12 +33,11 @@ const CommentPopup = ({ show, onClose, onSubmit }) => {
             placeholder="Username"
             className='mb-2 w-full rounded'
           />
-          <input
-            type="textarea"
+          <textarea
             value={text}
             onChange={handleInputChange2}
             placeholder="Text"
-            className='mb-2 w-full rounded'
+            className='mb-2 w-full rounded min-h-[10rem] text-lg p-2'
           />
           <button type="submit" className='mb-2 bg-DishColor font-bold rounded'>Submit</button>
         </form>
