@@ -5,10 +5,12 @@ services:
     image: nginx:alpine
     container_name: nginx
     ports:
-      - "80:80"
+      - "8080:80"
     volumes:
       - ./:/var/www/html
+      - ./DishMasters_Frontend/dist:/var/www/html/public/react
       - ./nginx/laravel.conf:/etc/nginx/conf.d/default.conf
+      - ./storage:/home/DishMasters/DishMasters/storage
     depends_on:
       - laravel
 
@@ -18,7 +20,9 @@ services:
       dockerfile: Dockerfile
     container_name: laravel
     volumes:
-      - ./:/var/www/html
+      - ./DishMasters_Frontend/dist:/var/www/html/public/react
+      - ./nginx/laravel.conf:/etc/nginx/conf.d/laravel.conf
+      - ./storage:/home/DishMasters/DishMasters/storage
     environment:
       - DB_HOST=mysql
       - DB_DATABASE=dishmasterDB

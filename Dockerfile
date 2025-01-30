@@ -1,11 +1,9 @@
-# Dockerfile
 FROM node:18 as react-build
 WORKDIR /app
 COPY ./DishMasters_Frontend/package*.json ./
 RUN npm install
 COPY ./DishMasters_Frontend ./
 RUN NODE_ENV=development npm i
-
 
 FROM php:8.2-fpm as laravel
 WORKDIR /var/www/html
@@ -24,10 +22,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 COPY . .
 
 # Copy React build files to Laravel's public directory
-COPY --from=react-build /app/build ./public/react
-
-# Install Laravel dependencies
-RUN composer install --optimize-autoloader --no-dev
+COPY --from=react-build /app/dist ./public/react
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
