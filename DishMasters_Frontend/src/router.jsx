@@ -31,6 +31,18 @@ import WeeklyRecipes from './views/challenges/WeeklyRecipes';
 import MoreSeason from './views/challenges/MoreInfoSeason';
 import MoreWeek from './views/challenges/MoreInfoWeek';
 
+// TASTE TRENDS
+import HeaderTrends from './views/TasteTrends/HeaderTrends'
+import ContentTrends from './views/TasteTrends/ContentTrends';
+
+// SEASON RECIPES
+import HeaderSeason from './views/SeasonRecipes/HeaderSeason'
+import ContentRecipes from './views/SeasonRecipes/ContentRecipes';
+
+// WORLD DISHSES
+import HeaderWorld from './views/WorldDishes/HeaderWorld';
+import ContentWorld from './views/WorldDishes/ContentWord';
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -111,6 +123,37 @@ const router = createBrowserRouter([
             {
                 path: '/faq',
                 element: <FAQ />
+
+            },
+            {
+                path: '/seasonRecepies',
+                element:
+                    <div>
+                        <HeaderSeason />
+                        <ContentRecipes />
+                        <Footer />
+                    </div>
+
+
+            },
+            {
+                path: '/tasteTrends',
+                element:
+                    <div>
+                        <HeaderTrends />
+                        <ContentTrends />
+                        <Footer />
+                    </div>
+
+            },
+            {
+                path: '/worldDishes',
+                element:
+                    <div>
+                        <HeaderWorld />
+                        <ContentWorld />
+                        <Footer />
+                    </div>
 
             },
 

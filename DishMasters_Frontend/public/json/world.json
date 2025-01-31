@@ -1,0 +1,297 @@
+{
+  "dishes": [
+    {
+      "name": "Peking Duck",
+      "description": "A famous Chinese dish known for its crispy skin and tender meat, served with pancakes, hoisin sauce, and scallions.",
+      "country": "China",
+      "calories": 800,
+      "preparation_time": "3 hours",
+      "ingredients": [
+        "Duck",
+        "Hoisin sauce",
+        "Pancakes",
+        "Scallions",
+        "Cucumber",
+        "Plum sauce"
+      ],
+      "image": "https://s3.us-east-1.amazonaws.com/assets.mapleleaffarms.com/content/_1200x545_crop_center_85_none/Whole-Peking-Duck_2021-10-11-202645_crbx.jpg"
+    },
+    {
+      "name": "Banh Mi",
+      "description": "A Vietnamese sandwich made with a French baguette, filled with various meats, pickled vegetables, herbs, and mayonnaise.",
+      "country": "Vietnam",
+      "calories": 450,
+      "preparation_time": "15 minutes",
+      "ingredients": [
+        "Baguette",
+        "Pork or chicken",
+        "Pickled vegetables",
+        "Cilantro",
+        "Mayonnaise",
+        "Chili sauce"
+      ],
+      "image": "https://www.allrecipes.com/thmb/HTJHVC_LYKmXaMF54dhe2gZQkNI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/roasted-pork-banh-mi-vietnamese-sandwitch-ddmfs-3X4-0332-cfb4d2e149e7476ab2a2b4030c543f1b.jpg"
+    },
+    {
+      "name": "Tom Yum Soup",
+      "description": "A hot and sour Thai soup made with shrimp, mushrooms, lemongrass, lime leaves, and chili, known for its bold flavors.",
+      "country": "Thailand",
+      "calories": 150,
+      "preparation_time": "30 minutes",
+      "ingredients": [
+        "Shrimp",
+        "Lemongrass",
+        "Mushrooms",
+        "Lime leaves",
+        "Chili",
+        "Fish sauce"
+      ],
+      "image": "https://www.thespruceeats.com/thmb/PrhhN3g0-fkHH3ULhqcOdo8X_Mk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vegetarian-tom-yum-soup-3217762-hero-01-4872510cb5f24d9480e7a2f4b8f23c57.jpg"
+    },
+    {
+      "name": "Pasta Carbonara",
+      "description": "An Italian pasta dish made with eggs, cheese (Pecorino Romano), pancetta, and black pepper, creating a creamy sauce.",
+      "country": "Italy",
+      "calories": 600,
+      "preparation_time": "30 minutes",
+      "ingredients": [
+        "Pasta",
+        "Eggs",
+        "Pecorino Romano cheese",
+        "Pancetta",
+        "Black pepper",
+        "Olive oil"
+      ],
+      "image": "https://veganwetdreams.com/wp-content/uploads/2023/06/Macarrones-a-la-carbonara-1920-1024x819.jpg"
+    },
+    {
+      "name": "Paella",
+      "description": "A traditional Spanish dish originating from the Valencian Community. It is made with rice, seafood, meat, vegetables, saffron, and other seasonings.",
+      "country": "Spain",
+      "calories": 450,
+      "preparation_time": "1 hour",
+      "ingredients": [
+        "Rice",
+        "Sepia",
+        "Mussels",
+        "Shrimp",
+        "Garlic",
+        "Saffron",
+        "Olive Virgin Oil"
+      ],
+      "image": "https://nomen.es/wp-content/uploads/2020/09/trucos-paella-perfecta.jpg"
+    },
+    {
+      "name": "Spanish Omelette",
+      "description": "A classic Spanish dish consisting of a thick omelette made with eggs, potatoes, onions, and olive oil.",
+      "country": "Spain",
+      "calories": 300,
+      "preparation_time": "45 minutes",
+      "ingredients": [
+        "Eggs",
+        "Potatoes",
+        "Onion",
+        "Olive oil",
+        "Salt",
+        "Pepper"
+      ],
+      "image": "https://www.spicebangla.com/wp-content/uploads/2024/08/Tortilla-de-Patatas.webp"
+    },
+    {
+      "name": "Sushi",
+      "description": "A Japanese dish consisting of rice seasoned with vinegar, sugar, and salt, combined with raw or cooked fish, seafood, vegetables, and occasionally fruit.",
+      "country": "Japan",
+      "calories": 250,
+      "preparation_time": "30 minutes",
+      "ingredients": [
+        "Sushi rice",
+        "Rice vinegar",
+        "Raw fish (tuna, salmon)",
+        "Nori seaweed",
+        "Vegetables (cucumber, avocado)",
+        "Wasabi",
+        "Soy sauce"
+      ],
+      "image": "https://www.oliveradatenea.com/wp-content/uploads/2023/06/Sushi-rolls-de-salmon-y-Olivada-Olivera-dAtenea.jpg"
+    },
+    {
+      "name": "Pizza Margarita",
+      "description": "An Italian classic, a pizza with tomato sauce, mozzarella, fresh basil, and a touch of olive oil.",
+      "country": "Italy",
+      "calories": 280,
+      "preparation_time": "1 hour",
+      "ingredients": [
+        "Pizza dough",
+        "Tomato sauce",
+        "Mozzarella",
+        "Fresh basil",
+        "Olive oil",
+        "Salt"
+      ],
+      "image": "https://resizer.glanacion.com/resizer/v2/pizza-6PHUOGGNFJHU3DDC2PFUKIK5TI.jpg?auth=b5d3b01711017e49469bfa387a69a48b6aa8ec943e5ce401ae71491abe73c9a0&width=880&height=586&quality=70&smart=true"
+    },
+    {
+      "name": "Tacos",
+      "description": "A traditional Mexican dish consisting of a corn or flour tortilla filled with beef, chicken, fish, vegetables, and sauces.",
+      "country": "Mexico",
+      "calories": 150,
+      "preparation_time": "30 minutes",
+      "ingredients": [
+        "Corn or flour tortillas",
+        "Beef, chicken, or fish",
+        "Onion",
+        "Cilantro",
+        "Sauce",
+        "Lime"
+      ],
+      "image": "https://www.onceuponachef.com/images/2023/08/Beef-Tacos-760x570.jpg"
+    },
+    {
+      "name": "Croissant",
+      "description": "A delicious French pastry, flaky and slightly sweet, that can be filled with chocolate, almonds, or ham.",
+      "country": "France",
+      "calories": 200,
+      "preparation_time": "2 hours",
+      "ingredients": [
+        "Flour",
+        "Butter",
+        "Yeast",
+        "Salt",
+        "Sugar",
+        "Milk"
+      ],
+      "image": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/090583d58388048bb29f60626f704c8e/Derivates/8ca882703d8350ae1fd21616ac930be0c4d7e494.jpg"
+    },
+    {
+      "name": "Pad Thai",
+      "description": "A Thai dish that combines stir-fried rice noodles with egg, shrimp or chicken, tofu, peanuts, and a sweet and salty sauce.",
+      "country": "Thailand",
+      "calories": 400,
+      "preparation_time": "30 minutes",
+      "ingredients": [
+        "Rice noodles",
+        "Shrimp or chicken",
+        "Tofu",
+        "Egg",
+        "Peanuts",
+        "Lime",
+        "Tamarind sauce"
+      ],
+      "image": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/31539B08-C656-4F96-8A50-303989CFC99A/Derivates/c260fa13-c1b4-46a6-a389-592cdb3faae4.jpg"
+    },
+    {
+      "name": "Feijoada",
+      "description": "A traditional Brazilian stew made with black beans, pork, beef, and rice, served with collard greens.",
+      "country": "Brazil",
+      "calories": 600,
+      "preparation_time": "2 hours",
+      "ingredients": [
+        "Black beans",
+        "Pork",
+        "Beef",
+        "Rice",
+        "Collard greens",
+        "Garlic",
+        "Onion"
+      ],
+      "image": "https://www.goya.com/media/3642/feijoada-brazilian-meat-and-bean-stew.jpg?quality=80"
+    },
+    {
+      "name": "Moussaka",
+      "description": "A Greek dish made with layers of eggplant, lamb or beef, tomato sauce, béchamel sauce, and spices.",
+      "country": "Greece",
+      "calories": 500,
+      "preparation_time": "1.5 hours",
+      "ingredients": [
+        "Eggplant",
+        "Lamb or beef",
+        "Tomato sauce",
+        "Onion",
+        "Béchamel",
+        "Garlic",
+        "Spices (cinnamon, nutmeg)"
+      ],
+      "image": "https://www.recipetineats.com/tachyon/2019/03/Greek-Moussaka_3-re-edited-SQ.jpg?resize=500%2C375"
+    },
+    {
+      "name": "Gazpacho",
+      "description": "A traditional Spanish cold soup made with tomatoes, peppers, cucumbers, and olive oil.",
+      "country": "Spain",
+      "calories": 150,
+      "preparation_time": "20 minutes",
+      "ingredients": [
+        "Tomatoes",
+        "Peppers",
+        "Cucumber",
+        "Garlic",
+        "Olive oil",
+        "Vinegar"
+      ],
+      "image": "https://img2.rtve.es/i/?w=1600&i=1622113766371.jpg"
+    },
+    {
+      "name": "Ramen",
+      "description": "A Japanese noodle dish served in broth with meat, egg, and vegetables.",
+      "country": "Japan",
+      "calories": 500,
+      "preparation_time": "1 hour",
+      "ingredients": [
+        "Ramen noodles",
+        "Broth",
+        "Pork or chicken",
+        "Egg",
+        "Green onions",
+        "Nori seaweed"
+      ],
+      "image": "https://hips.hearstapps.com/hmg-prod/images/190208-delish-ramen-horizontal-093-1550096715.jpg?crop=0.8893333333333334xw:1xh;center,top&resize=1200:*"
+    },
+    {
+      "name": "Lasagna",
+      "description": "An Italian baked pasta with layers of meat, tomato sauce, béchamel sauce, and cheese.",
+      "country": "Italy",
+      "calories": 600,
+      "preparation_time": "1.5 hours",
+      "ingredients": [
+        "Lasagna pasta",
+        "Ground meat",
+        "Tomato sauce",
+        "Béchamel",
+        "Parmesan cheese",
+        "Basil"
+      ],
+      "image": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/3B707DAE-A600-44FC-B7D5-15896184874D/Derivates/e3304b41-3431-4b6e-b600-8ee6bd94cdbe.jpg"
+    },
+    {
+      "name": "Chiles en Nogada",
+      "description": "A Mexican dish consisting of poblano chilies stuffed with picadillo and topped with walnut sauce.",
+      "country": "Mexico",
+      "calories": 700,
+      "preparation_time": "2 hours",
+      "ingredients": [
+        "Poblano chilies",
+        "Ground beef",
+        "Fruits (apple, pear, banana)",
+        "Walnuts",
+        "Cream",
+        "Pomegranate"
+      ],
+      "image": "https://www.daisybrand.com/wp-content/uploads/2019/12/CHILI-RELLENOS-770x628.jpg"
+    },
+    {
+      "name": "Biryani",
+      "description": "A flavorful Indian rice dish cooked with meat (chicken, mutton) and spices, often served with raita.",
+      "country": "India",
+      "calories": 550,
+      "preparation_time": "1.5 hours",
+      "ingredients": [
+        "Basmati rice",
+        "Chicken or mutton",
+        "Yogurt",
+        "Spices (cumin, cardamom, cinnamon)",
+        "Onion",
+        "Ginger"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Biryani_Home.jpg/1200px-Biryani_Home.jpg"
+    }
+  ]
+}

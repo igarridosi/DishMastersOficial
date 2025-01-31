@@ -1,0 +1,76 @@
+{
+  "category": "Season Recipes",
+  "description": "Celebrate the flavors of each season with special recipes for holidays and events, from Halloween treats to Christmas classics. This section highlights dishes perfect for any celebration.",
+  "recipes": [
+      {
+          "name": "Spooky Halloween Cupcakes",
+          "season": "Halloween",
+          "preparation_time": "30 minutes",
+          "calories": 250,
+          "ingredients": [
+              "2 cups flour",
+              "1 cup sugar",
+              "1/2 cup cocoa powder",
+              "1 tsp baking soda",
+              "1/2 tsp salt",
+              "1 cup milk",
+              "1/2 cup vegetable oil",
+              "2 eggs",
+              "1 tsp vanilla extract"
+          ],
+          "img": "hallocoockies.jpg"
+      },
+      {
+          "name": "Classic Christmas Sugar Cookies",
+          "season": "Christmas",
+          "preparation_time": "25 minutes",
+          "calories": 180,
+          "ingredients": [
+              "2 3/4 cups flour",
+              "1 tsp baking soda",
+              "1/2 tsp baking powder",
+              "1 cup butter, softened",
+              "1 1/2 cups sugar",
+              "1 egg",
+              "1 tsp vanilla extract",
+              "1/2 tsp almond extract",
+              "3 tbsp milk"
+          ],
+          "img": "christmascoockies.jpg"
+      },
+      {
+          "name": "Pumpkin Spice Latte",
+          "season": "Autumn",
+          "preparation_time": "10 minutes",
+          "calories": 210,
+          "ingredients": [
+              "1 cup milk",
+              "2 tbsp pumpkin puree",
+              "1 tbsp sugar",
+              "1/2 tsp pumpkin pie spice",
+              "1/2 tsp vanilla extract",
+              "1/2 cup brewed coffee",
+              "Whipped cream (optional)"
+          ],
+          "img": "pumpkinlatte.jpg"
+      },
+      {
+          "name": "Easter Carrot Cake",
+          "season": "Easter",
+          "preparation_time": "45 minutes",
+          "calories": 320,
+          "ingredients": [
+              "2 cups flour",
+              "2 tsp baking powder",
+              "1/2 tsp salt",
+              "1 tsp cinnamon",
+              "1/2 cup vegetable oil",
+              "1 cup sugar",
+              "2 eggs",
+              "1 1/2 cups grated carrots",
+              "1/2 cup chopped walnuts"
+          ],
+          "img": "carrotcake.jpg"
+      }
+  ]
+}

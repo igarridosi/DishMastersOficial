@@ -110,10 +110,10 @@ const SidebarDesktop = ({ setShowForm }) => {
             </button>
             {openSubmenu === 'dishylist' && (
               <ul className="ml-4 mt-2">
-                <li><a href="#" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('taste_trends')}</a></li>
-                <li><a href="seasonRecipes.html" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('season_recipes')}</a></li>
+                <li><a href="/tasteTrends" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('taste_trends')}</a></li>
+                <li><a href="/seasonRecepies" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('season_recipes')}</a></li>
                 <li><a href="/spots" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('food_spots')}</a></li>
-                <li><a href="#" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('world_dishes')}</a></li>
+                <li><a href="/worldDishes" className="block p-2 hover:bg-gray-200 rounded no-underline text-black">{t('world_dishes')}</a></li>
               </ul>
             )}
           </li>

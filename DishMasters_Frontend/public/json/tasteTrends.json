@@ -1,0 +1,88 @@
+{
+    "recipes": [
+      {
+        "name": "Spaghetti Bolognese",
+        "category": "Pasta",
+        "calories": 450,
+        "preparation_time": "30 minutes",
+        "cooking_time": "20 minutes",
+        "total_time": "50 minutes",
+        "servings": 4,
+        "ingredients": [
+          "400 g spaghetti",
+          "500 g ground beef",
+          "1 onion",
+          "2 garlic cloves",
+          "400 g crushed tomatoes",
+          "2 tablespoons olive oil",
+          "Salt and pepper to taste",
+          "Grated Parmesan cheese (optional)"
+        ],
+        "steps": [
+          "Cook the spaghetti in salted water according to the package instructions.",
+          "Heat the olive oil in a pan and sauté the chopped onion and garlic.",
+          "Add the ground beef and cook until browned.",
+          "Stir in the crushed tomatoes, season with salt and pepper, and simmer for 15 minutes.",
+          "Serve the sauce over the cooked spaghetti and sprinkle with Parmesan cheese if desired."
+        ],
+        "coockiedo": "https://cookidoo.es/recipes/recipe/es-ES/r146353",
+        "youtube": "https://www.youtube.com/watch?v=EHZ5XMl8bM4",
+        "img": "spagettiboloñesa.jpg"
+      },
+      {
+        "name": "Chicken Tacos",
+        "category": "Mexican",
+        "calories": 300,
+        "preparation_time": "15 minutes",
+        "cooking_time": "15 minutes",
+        "total_time": "30 minutes",
+        "servings": 4,
+        "ingredients": [
+          "500 g chicken breast",
+          "8 corn tortillas",
+          "1 red bell pepper",
+          "1 red onion",
+          "2 tablespoons olive oil",
+          "1 teaspoon ground cumin",
+          "1 teaspoon paprika",
+          "Salt and pepper to taste",
+          "Guacamole and sour cream (optional)"
+        ],
+        "steps": [
+          "Cut the chicken into strips and season with cumin, paprika, salt, and pepper.",
+          "Heat the olive oil in a pan and cook the chicken until golden brown.",
+          "Sauté the sliced bell pepper and onion in the same pan.",
+          "Warm the tortillas in a clean pan.",
+          "Fill the tortillas with the chicken and vegetables, adding guacamole or sour cream if desired."
+        ],
+        "coockiedo": "https://cookidoo.es/recipes/recipe/es-ES/r53876",
+        "youtube": "https://www.youtube.com/watch?v=Iu4_S2M3qrg",
+        "img": "chickentakos.jpg"
+      },
+      {
+        "name": "Caesar Salad",
+        "category": "Salad",
+        "calories": 250,
+        "preparation_time": "10 minutes",
+        "cooking_time": "5 minutes",
+        "total_time": "15 minutes",
+        "servings": 2,
+        "ingredients": [
+          "1 romaine lettuce",
+          "50 g croutons",
+          "50 g Parmesan cheese slices",
+          "1 grilled chicken breast",
+          "3 tablespoons Caesar dressing"
+        ],
+        "steps": [
+          "Wash and chop the lettuce.",
+          "Slice the grilled chicken breast into strips.",
+          "In a large bowl, mix the lettuce, croutons, and Parmesan cheese.",
+          "Add the chicken and toss with the Caesar dressing just before serving."
+        ],
+        "coockiedo": "https://cookidoo.es/recipes/recipe/es-ES/r44876",
+        "youtube": "https://www.youtube.com/watch?v=5bT_4kaqGGI",
+        "img": "cesar.jpg"
+      }
+    ]
+}
