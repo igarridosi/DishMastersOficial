@@ -1,5 +1,5 @@
 FROM node:18 as react-build
-WORKDIR /app
+WORKDIR /
 COPY ./DishMasters_Frontend/package*.json ./
 RUN npm install
 COPY ./DishMasters_Frontend ./
