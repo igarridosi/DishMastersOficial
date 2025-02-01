@@ -39,9 +39,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Generar la clave de aplicación
-RUN php artisan key:generate
-
 # Exponer el puerto 80
 EXPOSE 80
 
