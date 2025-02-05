@@ -41,3 +41,5 @@ Route::post('/dishcuss/saveDishcussing', [DishController::class, 'saveDishcussin
 Route::post('/dishcuss/saveDishComment', [DishController::class, 'saveDishComment']);
 Route::post('/dishcuss/updateDishcussing', [DishController::class, 'updateDishcussing']);
 Route::post('/dishcuss/updateDishComment', [DishController::class, 'updateDishComment']);
+Route::post('/dishcuss/deletePost', [DishController::class, 'deletePost']);
+Route::post('/dishcuss/deleteComment', [DishController::class, 'deleteComment']);

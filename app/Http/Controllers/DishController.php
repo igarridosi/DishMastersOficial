@@ -154,4 +154,80 @@ class DishController extends Controller
             return response()->json(['message' => 'Error updating data'], 500);
         }
     }
+
+    public function deletePost(Request $request)
+    {
+        $request->validate([
+            'id' => 'required',
+        ]);
+        
+        $id = $request->id;
+        
+        try {
+            if (!File::exists($this->dishcussingFilePath)) {
+                return response()->json(['message' => 'File not found'], 404);
+            }
+
+            $data = File::get($this->dishcussingFilePath);
+            $dishcussings = json_decode($data, true);
+
+            // Filter out the dishcussing by id
+            $updatedDishcussings = array_filter($dishcussings, function($item) use ($id) {
+                return $item['id'] !== $id;
+            });
+
+            // If no change in length, item not found
+            if (count($updatedDishcussings) === count($dishcussings)) {
+                return response()->json(['message' => 'Post not found'], 404);
+            }
+
+            // Re-index array to avoid numeric index gap
+            $updatedDishcussings = array_values($updatedDishcussings);
+
+            // Save updated dishcussings
+            File::put($this->dishcussingFilePath, json_encode($updatedDishcussings, JSON_PRETTY_PRINT));
+
+            return response()->json(['message' => 'Post deleted successfully'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error deleting post'], 500);
+        }
+    }
+
+    public function deleteComment(Request $request)
+    {
+        $request->validate([
+            'id' => 'required',
+        ]);
+        
+        $id = $request->id;
+        
+        try {
+            if (!File::exists($this->dishCommentsFilePath)) {
+                return response()->json(['message' => 'File not found'], 404);
+            }
+
+            $data = File::get($this->dishCommentsFilePath);
+            $dishComments = json_decode($data, true);
+
+            // Filter out the comment by id
+            $updatedDishComments = array_filter($dishComments, function($item) use ($id) {
+                return $item['id'] !== $id;
+            });
+
+            // If no change in length, item not found
+            if (count($updatedDishComments) === count($dishComments)) {
+                return response()->json(['message' => 'Comment not found'], 404);
+            }
+
+            // Re-index array to avoid numeric index gap
+            $updatedDishComments = array_values($updatedDishComments);
+
+            // Save updated dishComments
+            File::put($this->dishCommentsFilePath, json_encode($updatedDishComments, JSON_PRETTY_PRINT));
+
+            return response()->json(['message' => 'Comment deleted successfully'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error deleting comment'], 500);
+        }
+    }
 }
